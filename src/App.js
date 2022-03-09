@@ -10,26 +10,13 @@ const App = () => {
   return (
     <>
       <Navbar />
-	  <Sort />
+	    <Sort />
       <div className="outer-wrapper">
-        <div className="filter-left-content">
-          <Filter />
-        </div>
-        <div className="container left-content-border">
-          <div className="flexed">
-            {Pdata.map((val, index) => {
-              return (
-                <Cards
-                  key={index}
-                  imgsrc={val.imgscr}
-                  pname={val.pname}
-                  product={val.product}
-                  price={val.price}
-                />
-              );
-            })}
-          </div>
-        </div>
+        {/* <div className="filter-left-content">
+            <Filter />
+        </div> */}
+        
+            <Cards />
       </div>
     </>
   );

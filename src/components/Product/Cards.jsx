@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Images from "../Images";
 import "../../helper.css";
 import Pdata from "./Pdata";
 import style from "./Cards.css";
+import ProductItem from "./ProductItem";
+import Filter from "../Filter/Filter";
 // import $ from 'jquery';
 
 // $('.slider').slick({
@@ -27,26 +29,44 @@ import style from "./Cards.css";
 // 	  slickPause();
 //   });
 
-const Cards = (props) => {
+const Cards = () => {
+
+    const [product, setProduct] = useState(Pdata);
+
+    // const filterResult = (catItem) => {
+    //   const result = Pdata.filter((currData) => {
+    //       return currData.category === catItem;
+    //   })
+    //   console.log(result);
+    //   setProduct(result);
+    // }
+
+    const filterResult = (catItem) => {
+      const result = Pdata.filter((currData) => {
+          console.log(currData);
+          if(catItem === currData.category) {
+              return currData.category === catItem;
+          } else if(catItem === currData.pname) {
+              return currData.pname === catItem;
+          }
+      })
+      console.log(result);
+      setProduct(result);
+  }
+
   return (
-    <div className="cards">
-      <div className="card">
-        <div className="slider">
-		<img src={props.imgsrc} alt="" className="product-image" />
-          {/* <div className="slide"></div> */}
-          {/* <div class="slide"></div>
-          <div class="slide"></div> */}
-        </div>
-        <div className="card-info">
-          <h3 className="card-category">{props.pname}</h3>
-          <p className="card-title">{props.product}</p>
-          <p className="card-price">{props.price}</p>
-		  <div className="wishlist-wrapper">
-		  <button className="wishlist"> Add to bag </button>
-		  </div>
-        </div>
-      </div>
-    </div>
+
+    <>
+      
+
+        {/* FILTERING IS DEFINED */}
+        <Filter filterResult={filterResult}/>
+
+        {/* PRODUCT CARD IS DEFINED HERE */}
+        <ProductItem product={product}/>
+      
+    </>
+    
   );
 };
 
