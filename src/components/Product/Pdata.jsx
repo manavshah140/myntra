@@ -38,6 +38,9 @@ const Pdata = [
         category: "girls",
         imgscr: "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1847238/2018/6/19/cf47e553-c267-499c-8ce5-d72c21f5d8b01529387070832-Harvard-Men-Navy--Yellow-Checked-Slim-Fit-Casual-Shirt-44215-1.jpg",
         price: "Rs 699",
+        recommendation: 1,
+        discount: 20,
+        bestseller: 1
     },
     {
         id: 6,

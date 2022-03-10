@@ -5,16 +5,6 @@ import Pdata from "../Product/Pdata";
 
 const Filter = ({filterResult}) => {
 
-  // const [product, setProduct] = useState(Pdata);
-
-  // const filterResult = (catItem) => {
-  //     const result = Pdata.filter((currData) => {
-  //         return currData.category === catItem;
-  //     })
-  //     console.log(result);
-  //     setProduct(result);
-  // }
-
   return (
     <div className="filter-left-content">
         <div className="position-fixed left-content-border">

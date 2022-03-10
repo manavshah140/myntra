@@ -4,7 +4,7 @@ const ProductItem = ({product}) => {
     return(
         <>
             <div className="container left-content-border">
-            <div className="flexed">
+            <div className="right-content">
               {
                   product.map((value, index) => {
                         const { id, pname, product, category, imgscr, price } = value;
